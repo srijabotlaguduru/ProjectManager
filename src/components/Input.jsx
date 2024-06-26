@@ -1,5 +1,4 @@
-import { useState, useRef } from "react";
-import { useContext } from "react";
+import { useContext, useRef } from "react";
 import { ProjectContext } from "../store/project-context.jsx";
 
 export default function Input({ label, task, ...props }) {
@@ -15,7 +14,7 @@ export default function Input({ label, task, ...props }) {
     if (task) {
       const taskDetails = titleRef.current.value;
       addTask(taskDetails);
-      setEditTask(false);
+      //setEditTask(false);
     } else {
       const projectDetails = {
         title: titleRef.current.value,

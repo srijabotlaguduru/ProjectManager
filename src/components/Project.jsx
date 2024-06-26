@@ -16,7 +16,6 @@ export default function Project() {
     setEditTask,
   } = useContext(ProjectContext);
 
-  console.log(currProject);
 
   useEffect(() => {
     if (newProjectSelection) {

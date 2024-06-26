@@ -4,7 +4,7 @@ import { ProjectContext } from "../store/project-context.jsx";
 export default function Tasks(){
   const {currProject, deleteTask} = useContext(ProjectContext);
   const tasks = currProject[2];
-  console.log("Tasks " +tasks)
+  console.log("Tasks " + tasks)
   return (
     <section>
       <h2 className="text-2xl font-bold text-stone-700 mb-4">Tasks</h2>

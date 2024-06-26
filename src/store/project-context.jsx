@@ -24,7 +24,6 @@ export default function ProjectContextProvider({ children }) {
   const [editTask, setEditTask] = useState(false);
 
   function addNewProject(projectDetails) {
-    console.log(projectDetails);
     setEditing(false);
     if (projectDetails) {
       const addValue = [projectDetails.title, projectDetails.description, []];
@@ -47,8 +46,11 @@ export default function ProjectContextProvider({ children }) {
           item[2].push(task);
         }
       });
+      console.log([...prev]);
       return [...prev];
     });
+    setEditTask(false);
+    console.log("Add task called ", Math.random())
   }
 
   function deleteTask(task) {
@@ -77,14 +79,12 @@ export default function ProjectContextProvider({ children }) {
     if (currProject !== project) {
       setNewProject(true);
       setCurrProject(project);
-      console.log("Inside the if statement");
     }
   }
 
   function setEditingToValue(value = true) {
     console.log("called");
     setEditing(value);
-    //working for project but not task
   }
 
   const values = {
