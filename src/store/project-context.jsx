@@ -43,14 +43,15 @@ export default function ProjectContextProvider({ children }) {
     setProject((prev) => {
       prev.map((item) => {
         if (item[0] === currProject[0]) {
-          item[2].push(task);
+          if(item[2].indexOf(task) == -1){
+            item[2].push(task);
+          }          
         }
       });
       console.log([...prev]);
       return [...prev];
     });
     setEditTask(false);
-    console.log("Add task called ", Math.random())
   }
 
   function deleteTask(task) {
